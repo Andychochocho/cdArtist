@@ -1,10 +1,20 @@
 
 <h1>Enter Your New CD</h1>
 
-<form class="" action="index.html" method="post">
+<form action="/add_cd/@Model.GetId()/new" method="post">
 <label>CD Name</label>
-<input name = "CdName"></input>
-<label>Artist Name</label>
-<input name = "ArtistName"></input>
-<button>Add CD</button>
+<input type="text" name = "cdInput"></input>
+<button type="submit">Add CD</button>
 </form>
+
+
+<h1>List of CDs</h1>
+@if (@Model["cdList"].Count == 0)
+{
+  <h3>You don't yet have any CD's for this artist</h3>
+}
+
+@foreach (var x in @Model["cdList"])
+{
+  <li>@x.GetName()</li>
+}
