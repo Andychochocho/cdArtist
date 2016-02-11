@@ -46,9 +46,7 @@ namespace ArtistCD
 
       var newCd = new CD(Request.Form["cdInput"]);
 
-
       selectedArtist.Save(newCd);
-
 
       y.Add("Artist", selectedArtist);
       y.Add("cdList", artistCD);

@@ -3,6 +3,7 @@
 <ul>
     @foreach(var x in Model)
     {
-      <li><a href = "/add_cd/@x.GetId()/new" >@x.GetArtistName()</a></li>
+
+      <li><a href = "/add_cd/@x.GetId()">@x.GetArtistName()</a></li>
     }
 </ul>
