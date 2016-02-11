@@ -1,17 +1,21 @@
 using Nancy;
-// Replace sample.objects
-using SampleName.Objects;
+using Artists.Objects;
 using System.Collections.Generic;
 
 // Replace namespace
-namespace SampleName
+namespace ArtistCD
 {
   public class HomeModule : NancyModule
   {
     public HomeModule()
     {
-      Get["/"] = _ => View["Sample.cshtml"];
-      };
+      Get["/"] = _ => View["index.cshtml"];
+
+      Post["/viewArtist"] = _ => {
+      Artist newArtist = new Artist(Request.Form["artistInput"]);
+      List<Artist> listArtist = Artist.GetAll();
+      return View["viewArtist.cshtml", listArtist];
+     };
     }
   }
 }
