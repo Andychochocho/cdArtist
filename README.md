@@ -1,4 +1,4 @@
-# Places
+# CD-Artist
 
 #### By Andrew Cho and Alex Larson
 
